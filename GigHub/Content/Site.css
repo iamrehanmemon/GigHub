@@ -23,6 +23,11 @@ textarea {
     max-width: 280px;
 }
 
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
+
 /* Bootstrap Overrides */
 .navbar-inverse {
     background-color: #ff4342;
@@ -80,7 +85,6 @@ h6,
     font-size: 17px;
     padding : 20px 15px;
     height: 44px;
-    -ms-border-radius: 9px;
     border-radius: 9px;
 }
 
@@ -93,6 +97,5 @@ h6,
 .btn {
     font-size: 17px;
     padding: 7px 20px;
-    -ms-border-radius: 9px;
     border-radius: 9px;
 }
