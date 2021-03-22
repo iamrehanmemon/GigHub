@@ -113,18 +113,20 @@ h6,
 
 .form-group {
     margin-bottom: 20px;
+    box-shadow: none;
 }
 
 .form-control {
     font-size: 17px;
     height: 44px;
     border-radius: 9px;
+    transition:none;
 }
 
 .form-control:focus {
-    border-color: #2196f3;
     box-shadow: none;
-    -webkit-box-shadow:none;
+    transition: none;
+    -webkit-transition: none;
 }
 
 .btn {
@@ -213,4 +215,12 @@ h6,
 
 .popover-notifications ul.notifications .highlight {
     font-weight: bold;
+}
+
+#searchGigs {
+    width: 400px;
+}
+
+#searchGigs input {
+    max-width: none;
 }
