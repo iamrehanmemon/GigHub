@@ -11,10 +11,12 @@ namespace GigHub.Controllers
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly AttendnaceRepository _attendnaceRepository;
 
         public HomeController()
         {
             _context = new ApplicationDbContext();
+            _attendnaceRepository = new AttendnaceRepository(_context);
         }
 
         public ActionResult Index(string query = null)
@@ -35,9 +37,7 @@ namespace GigHub.Controllers
             }
 
             var userId = User.Identity.GetUserId();
-            var attendances = _context.Attendances
-                .Where(a => a.AttendeeId == userId && a.Gig.DateTime > DateTime.Now)
-                .ToList()
+            var attendances = _attendnaceRepository.GetFutureAttendances(userId)
                 .ToLookup(a => a.GigId);
 
             var viewModel = new GigsViewModel
