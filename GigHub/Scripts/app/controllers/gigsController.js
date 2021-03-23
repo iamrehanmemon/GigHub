@@ -4,7 +4,6 @@
 
     var init = function (container) {
         $(container).on("click", ".js-toggle-attendance",toggleAttendance)
-        /*$(".js-toggle-attendance").click(toggleAttendance);*/
     };
 
     var toggleAttendance = function (e) {

@@ -9,11 +9,11 @@
     {
         if (Model.IsFollowing)
         {
-            <button class="btn btn-info">Following</button>
+            <button class="btn btn-info js-toggle-follow" data-user-id="@Model.Gig.ArtistId">Following</button>
         }
         else
         {
-            <button class="btn btn-info">Follow</button>
+            <button class="btn btn-info js-toggle-follow" data-user-id="@Model.Gig.ArtistId">Follow</button>
         }
     }
 </h2>
@@ -25,4 +25,13 @@
     <p>
         You are going to this event.
     </p>
+}
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            GigsDetailsController.init();
+        });
+    </script>    
 }
